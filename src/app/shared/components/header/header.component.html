@@ -1,0 +1,17 @@
+<header class="ui fixed inverted menu">
+  <div class="ui container">
+    <a class="header item" routerLink="/">
+      <img src="assets/img/logo.png" alt="logo" class="logo" />
+      Re-vents
+    </a>
+    <a class="item" routerLinkActive="active" routerLink="/events">Events</a>
+    <div class="right item auth-btns">
+      <button (click)="openModal('login')" class="ui inverted button">
+        Log in
+      </button>
+      <button (click)="openModal('signup')" class="ui inverted button">
+        Sign up
+      </button>
+    </div>
+  </div>
+</header>

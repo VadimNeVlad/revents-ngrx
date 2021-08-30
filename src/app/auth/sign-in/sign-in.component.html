@@ -1,0 +1,24 @@
+<rv-modal title="Sign In" modalType="login">
+  <form form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="ui form">
+    <rv-input
+      [control]="getInputControl('email')"
+      name="email"
+      type="email"
+      placeholder="Enter email"
+    ></rv-input>
+    <rv-input
+      [control]="getInputControl('password')"
+      name="password"
+      type="password"
+      placeholder="Enter password"
+    ></rv-input>
+
+    <button
+      [disabled]="authForm.invalid || (isPending$ | async)"
+      type="submit"
+      class="ui teal button"
+    >
+      Signin
+    </button>
+  </form>
+</rv-modal>

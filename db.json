@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "author": "Vadim Sobolev",
+      "cancelEvent": false,
+      "category": "culture",
+      "city": "Ukraine",
+      "createAt": "2021-03-18T19:10:51.765Z",
+      "description": "I'm looking for a job as a Frontend developer to participate in interesting projects and possibility to grow as a specialist",
+      "eventDate": "2021-04-07T15:00:00.000Z",
+      "title": "Frontend React Developer",
+      "uid": "1",
+      "venue": "Mariupol"
+    },
+    {
+      "id": 2,
+      "author": "Jacob",
+      "cancelEvent": false,
+      "category": "film",
+      "city": "London",
+      "createAt": "2021-01-12T19:10:51.765Z",
+      "description": "Test Events",
+      "eventDate": "2021-03-15T15:00:00.000Z",
+      "title": "Film Trip",
+      "uid": "2",
+      "venue": "King Kross"
+    }
+  ],
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$dkbyP/1KXLeI2/7Yw9PCz.87y37f//2jlm1VOrKnx432qB5BZK6KO",
+      "name": "Test",
+      "gender": "Male",
+      "id": 1
+    }
+  ]
+}

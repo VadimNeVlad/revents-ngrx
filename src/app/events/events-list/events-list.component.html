@@ -1,0 +1,58 @@
+<ng-container
+  *ngIf="
+    (isLoading$ | async) === false && (events$ | async) as events;
+    else loader
+  "
+>
+  <div
+    *ngIf="events.length !== 0; else empty"
+    class="column height-full events-wrap fluid"
+  >
+    <div *ngFor="let event of events" class="ui segments">
+      <div class="ui segment">
+        <div class="ui grid">
+          <div class="events__img-wrap">
+            <a class="events__img" href="#">
+              <div [rvAvatarColor]="event.author" class="avatar-icon">
+                {{ event.author | nameTrim }}
+              </div></a
+            >
+          </div>
+          <div class="ten wide column">
+            <span class="ui large header">{{ event.title }}</span>
+            <div class="meta">
+              <span>Hosted by {{ event.author }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui segment">
+        <span
+          ><i class="clock icon"></i>{{ event.eventDate | date: "dd-MM-YYYY"
+          }}<i class="marker icon"></i>{{ event.city }}</span
+        >
+      </div>
+      <div *ngIf="event.attendees" class="ui secondary segment">
+        <div class="ui horizontal list"></div>
+      </div>
+      <div class="ui clearing segment">
+        <span class="item-text">{{ event.description }}</span>
+        <div class="btn-panel">
+          <a class="ui right floated teal button" href="#">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #loader>
+  <div class="center">
+    <rv-loader content="Loading Events"></rv-loader>
+  </div>
+</ng-template>
+
+<ng-template #empty>
+  <div class="center">
+    <h3>No Events</h3>
+  </div>
+</ng-template>

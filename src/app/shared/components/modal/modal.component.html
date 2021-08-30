@@ -1,0 +1,16 @@
+<div
+  [ngClass]="{ active: modalType === (modalType$ | async) }"
+  (click)="closeModal()"
+  class="ui page modals dimmer transition"
+>
+  <div
+    (click)="$event.stopPropagation()"
+    class="ui tiny modal transition visible"
+  >
+    <div class="header">{{ title }}</div>
+    <div class="content">
+      <ng-content select="[form]"></ng-content>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

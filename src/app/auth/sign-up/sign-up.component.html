@@ -1,0 +1,51 @@
+<rv-modal title="Sign Up" modalType="signup">
+  <form form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="ui form">
+    <rv-input
+      [control]="getInputControl('name')"
+      name="name"
+      type="text"
+      placeholder="Enter your name"
+    ></rv-input>
+    <rv-input
+      [control]="getInputControl('email')"
+      name="email"
+      type="email"
+      placeholder="Enter email"
+    ></rv-input>
+    <rv-input-radio
+      [control]="getInputControl('gender')"
+      [options]="options"
+    ></rv-input-radio>
+    <rv-input
+      [control]="getInputControl('password')"
+      name="password"
+      type="password"
+      placeholder="Enter password"
+    ></rv-input>
+    <rv-input
+      [control]="getInputControl('passwordConfirm')"
+      name="passwordConfirm"
+      type="password"
+      placeholder="Enter password"
+    ></rv-input>
+
+    <div
+      class="custom--input-error"
+      *ngIf="
+        authForm.invalid &&
+        authForm.get('passwordConfirm')?.touched &&
+        authForm.hasError('passwordsDoesntMatch')
+      "
+    >
+      <span class="input-err">Passwords doesn't match</span>
+    </div>
+
+    <button
+      [disabled]="authForm.invalid || (isPending$ | async)"
+      type="submit"
+      class="ui teal button"
+    >
+      Signup
+    </button>
+  </form>
+</rv-modal>

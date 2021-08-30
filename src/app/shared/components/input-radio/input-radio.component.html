@@ -1,0 +1,13 @@
+<div *ngIf="options.length > 0" class="field-group">
+  <div class="field-row">
+    <div *ngFor="let input of options" class="field">
+      <input
+        [formControl]="control"
+        [value]="input.value"
+        [id]="input.id"
+        type="radio"
+      />
+      <label class="label-radio" [for]="input.id">{{ input.value }}</label>
+    </div>
+  </div>
+</div>

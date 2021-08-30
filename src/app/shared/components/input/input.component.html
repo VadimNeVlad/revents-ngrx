@@ -1,0 +1,16 @@
+<div class="field">
+  <input [formControl]="control" [type]="type" [placeholder]="placeholder" />
+
+  <div *ngIf="control.invalid && control.touched">
+    <span class="input-err" *ngIf="control.hasError('required')"
+      >Field is required
+    </span>
+    <span class="input-err" *ngIf="control.hasError('email')"
+      >Enter a valid Email address</span
+    >
+    <span class="input-err" *ngIf="control.hasError('minlength')"
+      >Must be more than
+      {{ control.errors?.minlength.requiredLength }} characters</span
+    >
+  </div>
+</div>
